@@ -103,6 +103,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.garden
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhwbinder
+
 # KPOC
 PRODUCT_PACKAGES += \
     libsuspend \
