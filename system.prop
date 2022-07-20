@@ -231,3 +231,6 @@ ro.bluetooth.a2dp_offload.supported=false
 
 # Media Transcoding
 persist.sys.fuse.transcode_default=false
+
+# Audio
+ro.config.vc_call_vol_steps=7
