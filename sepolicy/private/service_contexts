@@ -13,3 +13,6 @@ tedongleservice u:object_r:radio_service:s0
 sh u:object_r:radio_service:s0
 media.VTS u:object_r:vtservice_service:s0
 media.VTS.HiDL u:object_r:vtservice_hidl_service:s0
+
+# Audio AIDL interface
+android.hardware.bluetooth.audio.IBluetoothAudioProviderFactory/sysbta    u:object_r:hal_audio_service:s0

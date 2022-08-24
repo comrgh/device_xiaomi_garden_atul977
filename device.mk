@@ -79,6 +79,18 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6762:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6762 \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR :=  $(DEVICE_PATH)/bluetooth/include
+
+# Bluetooth Audio (System-side HAL, sysbta)
+PRODUCT_PACKAGES += \
+    audio.sysbta.default \
+    android.hardware.bluetooth.audio-service-system
+
+PRODUCT_COPY_FILES += \
+     $(DEVICE_PATH)/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
+     $(DEVICE_PATH)/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUTY_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0_system \
