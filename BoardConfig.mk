@@ -135,6 +135,7 @@ BOARD_MAIN_PARTITION_LIST := \
     product \
     system
 
+<<<<<<< HEAD
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
@@ -172,6 +173,7 @@ SELINUX_IGNORE_NEVERALLOWS := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/props/system_ext.prop
 
 # Recovery
 TARGET_NO_RECOVERY := false
