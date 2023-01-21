@@ -229,3 +229,13 @@ persist.log.tag.mtkpower@impl=S
 
 # Gboard Rounded
 ro.com.google.ime.corner_key_r=35
+
+# Enable system-side generic bluetooth audio HAL
+persist.bluetooth.system_audio_hal.enabled=1
+
+# Bluetooth
+persist.bluetooth.a2dp_offload.disabled=true  
+ro.bluetooth.a2dp_offload.supported=false
+
+# Media Transcoding
+persist.sys.fuse.transcode_default=false
