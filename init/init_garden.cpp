@@ -30,6 +30,7 @@
 #include <cstdlib>
 #include <stdlib.h>
 #include <fstream>
+#include <regex>
 #include <string.h>
 #include <sys/sysinfo.h>
 #include <unistd.h>
@@ -139,14 +140,19 @@ void vendor_load_properties()
 
     std::string region = GetProperty("ro.boot.hwc", "");
     std::string hwname = GetProperty("ro.boot.hwname", "");
+    std::string product_name = GetProperty("ro.product.vendor.name", "");
 
-    if (hwname == "angelica") {
+    if (regex_match(product_name, std::regex("(angelica_)(.*)"))) {
         property_override("ro.product.brand", "Redmi");
         property_override("ro.product.model", "Redmi 9C");
         property_override("ro.product.device", "angelica");
     } else if (hwname == "angelicain") {
+        if (product_name == "angelicain_in") {
+            property_override("ro.product.model", "POCO C31");
+        } else {
+            property_override("ro.product.model", "POCO C3");
+        }
         property_override("ro.product.brand", "POCO");
-        property_override("ro.product.model", "POCO C3");
         property_override("ro.product.device", "angelicain");
     } else if (hwname == "angelican") {
         property_override("ro.product.brand", "Redmi");
@@ -159,8 +165,15 @@ void vendor_load_properties()
     } else if (hwname == "dandelion") {
         property_override("ro.product.brand", "Redmi");
         property_override("ro.product.device", "dandelion");
+        property_override("ro.bluetooth.a2dp_offload.supported", "false");
+        property_override("persist.bluetooth.a2dp_offload.disabled", "true");
+        property_override("persist.bluetooth.system_audio_hal.enabled", "1");
         if (region == "India_9i") {
-            property_override("ro.product.model", "Redmi 9I");
+            property_override("ro.product.model", "Redmi 9i");
+        } else if (region == "VDF") {
+            property_override("ro.product.model", "Redmi 9AT");
+        } else if (regex_match(product_name, std::regex("(dandelion_)(.*)(2)"))) {
+            property_override("ro.product.model", "Redmi 10A");
         } else {
             property_override("ro.product.model", "Redmi 9A");
         }
