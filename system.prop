@@ -220,7 +220,7 @@ persist.log.tag.mtkpower@impl=S
 ro.com.google.ime.corner_key_r=35
 
 # Audio
-ro.config.vc_call_vol_steps=7
+ro.config.vc_call_vol_steps=15
 
 # Media Transcoding
 persist.sys.fuse.transcode_default=false
