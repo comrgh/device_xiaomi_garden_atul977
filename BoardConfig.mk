@@ -170,7 +170,7 @@ TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/props/system_ext.prop
 
 # Recovery
