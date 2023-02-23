@@ -1,5 +1,5 @@
 # Vendor Tree 
-git clone https://github.com/Adarsh956/vendor_xiaomi_garden.git -b 13 vendor/xiaomi/garden
+git clone https://gitea.com/Atul977/vendor_xiaomi_garden.git -b 13 vendor/xiaomi/garden
 
 # Framework Repos 
 rm -rf frameworks/opt/telephony
@@ -14,5 +14,5 @@ git clone https://gitlab.com/adarsh956/external_faceunlock.git external/faceunlo
 git clone https://gitlab.com/adarsh956/packages_apps_FaceUnlockService.git packages/apps/FaceUnlockService
 
 # Apply Patches
-git clone https://github.com/Adarsh956/patches
+git clone https://gitea.com/Atul977/patches
 bash patches/apply-patches.sh
